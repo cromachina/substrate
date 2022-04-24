@@ -175,6 +175,7 @@ class Substrate(mglw.WindowConfig):
             self.screen_tri_vao.render(mgl.TRIANGLES)
 
     def render(self, time, frametime):
+        self.ctx.viewport = (0, 0, *self.window_size)
         self.move_agents()
         self.fbo.use()
         self.draw_agents()
